@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="assets/fb-share.jpg">
+  <meta name="author" content="Univesp">
+
+  <meta name="description" property="og:description" content="Estudo, trabalho, família, lazer, saúde: são tantas obrigações e tarefas que muitas vezes é difícil fazer tudo, não é mesmo? Mas a gente pode te ajudar a se organizar melhor!">
+
+  <title>Univesp | Planejando seu tempo.</title>
+
+  <link rel="shortcut icon" href="https://apps.univesp.br/common/favicon.ico" type="image/x-icon" />
+
+  <!-- Arquivos Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <!--Arquivos para o jquery mobile-->
+  <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" /> -->
+
+
+  <!-- Ícones por Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <!-- Ícones por Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Tipografia institucional por Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Barlow:300,400,700|Open+Sans:400,400i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kalam:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap" rel="stylesheet">
+
+  <!-- Compartilhamento por jsSocials -->
+  <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
+  <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-minima.css" />
+
+  <!-- Animate CSS. Descomente se for utilizar. Caso contrário, remova. -->
+  <!-- <link rel="stylesheet" href="https://apps.univesp.br/common/animate.css"> -->
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="https://apps.univesp.br/common/rea-geral-2.0.css">
+  <link rel="stylesheet" href="stylesheets/nav_footer.css">
+  <link rel="stylesheet" href="stylesheets/main.css">
+
+</head>
+
+<body class="d-flex flex-column">
+
+  <!-- Utilizar essa DIV caso o REA não se adapte a todos os tamanhos de tela -->
+  <!-- <div class="esconder-tela-pequena"> -->
+
+  <!-- Menu -->
+  <nav>
+
+
+    <div class="container d-flex justify-content-end">
+
+      <div class="logo">
+
+        <a class="pularNavegacao" href="#conteudoPrincipal">Pular para Conteúdo Principal</a>
+        <a href="https://univesp.br/" target="_blank">
+          <img src="https://apps.univesp.br/common/colorida-positiva.svg" alt="Link para site institucional. Logotipo da universidade formado pela palavra Univesp em letras maiúsculas, sendo a letra V estilizada.">
+          <!-- outras opções de img src: colorida-negativa.svg, traco-positiva.svg, traco-negativa.svg -->
+        </a>
+
+      </div>
+
+      <ul class="nav justify-content-end">
+
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="material-icons" aria-label="Menu de acessibilidade">accessibility_new</i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            ...
+          </div>
+        </li> -->
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="material-icons" aria-label="Opções de Compartilhamento">share</i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <div class="sharing" id="share-buttons"></div>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+  <!-- Conteúdo -->
+  <main id="conteudoPrincipal">
+
+    <div id = "headerImpressao">
+      <img src = "assets/background-top.jpg" style = "width: 100%; height: auto;"></img>
+      <img id = "logoUnivesp" src = "https://apps.univesp.br/common/colorida-positiva.svg">
+      <div id = "volta2">Meu planejamento semanal</div>
+      <div class = "diasDaSemanaImpressao" style = "top:240px; left:-12px">Manhã</div>
+      <div class = "diasDaSemanaImpressao" style = "top:390px; left:-12px">Tarde</div>
+      <div class = "diasDaSemanaImpressao" style = "top:540px; left:-12px">Noite</div>
+    </div>
+
+    <div class="container">
+
+      <div id="paginaInicial" style="height: 100%; border: black 1px; display: flex; flex-direction: column; background-color: white; align-items: center">
+        <div style="height: 100%; display: flex; flex-direction: column; background-color: white; align-items: center; margin-top: 5%">
+            <p id = "planejando">PLANEJANDO</p>
+            <p id = "seuTempo">SEU TEMPO</p>
+          <div id = "textoIntro">
+            <p>Gerenciar seu <strong>tempo de estudo</strong> não é tarefa fácil. Afinal, o tempo que você tem muitas vezes tem que ser dividido com atividades de lazer, saúde, trabalho e convívio social. Não há uma
+              quantidade padrão de horas de estudo: o tempo de dedicação varia <strong>conforme as necessidades</strong> de cada um.</p>
+            <p>Sejam quais forem suas possibilidades, o importante é <strong>aproveitar bem</strong> os momentos de sua rotina dedicados ao estudo e <strong>se organizar</strong> de forma a evitar o acúmulo de
+              tarefas e o desgaste emocional, que podem comprometer o seu desempenho.</p>
+            <p>Conheça a história de Laressa:</p>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+          <div id = "tresImagens">
+             <img src="assets/quadrinhoLaressa-1.png" alt="Mostra uma moça jovem em sua casa. Ela está, ao mesmo tempo, estudando no computador, lendo um livro e balançando o carrinho do seu bebê. Está cercada por papéis, canetas e post-its. O texto diz: “Esta é Laressa. Ela cursa licenciatura na Univesp e optou pela EaD porque tem um bebê de 6 meses e trabalha com aulas particulares. Laressa precisa de horários flexíveis. Além disso, ela faz caminhadas duas vezes por semana e, aos domingos, vai à igreja pela manhã. Laressa prefere estudar à noite, porque seu marido está em casa e pode ficar com o bebê”." style = "width:100%;">
+             <img src="assets/quadrinhoLaressa-2.png" alt="Laressa está mexendo no computador, cercada de ícones como um relógio, um calendário e uma pilha de livros.
+O texto diz: “No curso de licenciatura, ela precisa: a) separar horário para dedicação; b) escolher um local adequado para estudar; c) acompanhar o cronograma; d) contatar o facilitador quando tem dúvidas; e) pesquisar assuntos em outras fontes; f) ter pontualidade na entrega das atividades; g) assistir aos vídeos; h) estudar seguindo a sequência indicada em cada módulo; i) fazer resumos, anotações de dúvidas, fichamentos etc.”.
+" style = "width:100%; margin-top: 5px">
+             <div style="display: flex; flex-direction: row; align-items: flex-start;width:100%">
+               <img src="assets/quadrinhoLaressa-3-novo.png" alt="Laressa está pensativa. Ao lado dela há um calendário de atividades.
+O texto diz: “Como ela está com dificuldade de se organizar, resolveu fazer um mapa com os dias da semana e, em cada dia, escrever tudo o que faz”.
+" style = "width:50%;">
+               <img src="assets/quadrinhoLaressa-4.png" alt="Laressa aparece em frente ao computador, observando seu mapa de atividades, que está na tela.
+O texto diz: “Com esse mapa, Laressa pode organizar suas atividades de modo a cumprir todas as tarefas, inserir os estudos em sua rotina e identificar possíveis períodos de descanso.”
+Após o último quadro, o texto diz: “Depois de algumas semanas, ela percebeu que sua vida melhorou e, além disso, teve melhores resultados no curso”." style = "width:50%; margin-top: 4px">
+             </div>
+          </div>
+          <div id = "textoNaImagem">
+            <p style = "font-weight: bold; font-family: 'Kalam'">AGORA É SUA VEZ. PARA ISSO, FAÇA COMO LARESSA:</p>
+            <div style = "margin-left:2%">
+              <p><strong style = "margin-left: 1px">1 </strong>Liste suas atividades diárias (desde a hora em que acorda até a hora em que vai dormir);</p>
+              <p><strong>2 </strong>Veja o exemplo da Laressa, logo a seguir;</p>
+              <p><strong>3 </strong>Ao acessar o exemplo, limpe-o e faça o seu. Lembre-se de preencher o quadro com as atividades que listou, identificando tempo para os estudos nos espaços vazios. Defina também um local para estudar;</p>
+              <p><strong>4 </strong>Imprima o quadro e procure cumprir seu planejamento!</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="primeiroBotao">
+          <div class = "botoesFimNovo">
+            <div class = "tamanhoIcone">
+              <img src="assets/botao-09.png" alt="">
+            </div>
+            <p style = "width:110%">CONSTRUA SEU PLANEJAMENTO SEMANAL</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="paginaTabela" style="height:100%; background-color: white; flex-direction: column; display:none">
+
+        <div class="introTabelaNova">
+          <div style = "width: 30%">
+            <img id = "fotoLaressaTabela" src="assets/laressa.jpg" alt="" style = "width: 100%; height: auto"></img>
+          </div>
+          <div style = "display: flex; flex-direction: column; width: 70%; align-items: center; justify-content: space-around">
+            <p id = "tituloTabela">Meu Planejamento Semanal</p>
+            <p>Confira abaixo o planejamento semanal de Laressa. Em seguida, limpe o quadro e complete-o com suas próprias atividades. Se preferir, também é possível imprimir um modelo em branco para preenchê-lo à mão.</p>
+          </div>
+        </div>
+
+        <div class="introTabelaNovaCelular">
+          <p id = "tituloTabelaCelular">Meu Planejamento Semanal</p>
+          <div id = "fotoTextoCelular">
+            <img id = "fotoLaressaTabelaCelular" src="assets/laressa.jpg" alt="" ></img>
+            <p style = "width:70%">Confira abaixo o planejamento semanal de Laressa. Em seguida, limpe o quadro e complete-o com suas próprias atividades. Se preferir, também é possível imprimir um modelo em branco para preenchê-lo à mão</p>
+          </div>
+        </div>
+
+        <div class="introTabelaNova320px">
+          <p id = "tituloTabelaNova320px">Meu Planejamento Semanal</p>
+          <img id = "fotoLaressaTabelaNova320px" src="assets/laressa.jpg" alt="" ></img>
+          <p >Confira abaixo o planejamento semanal de Laressa. Em seguida, limpe o quadro e complete-o com suas próprias atividades. Se preferir, também é possível imprimir um modelo em branco para preenchê-lo à mão</p>
+        </div>
+
+        <!--Início da tabela-->
+
+        <div class='MenuCelular'>
+          <div class='diasDaSemanaCelular estilo1' style='background-color: #3ab3d0;'>SEG</div>
+          <div class='diasDaSemanaCelular estilo1'>TER</div>
+          <div class='diasDaSemanaCelular estilo1'>QUA</div>
+          <div class='diasDaSemanaCelular estilo1'>QUI</div>
+          <div class='diasDaSemanaCelular estilo1'>SEX</div>
+          <div class='diasDaSemanaCelular estilo1'>SÁB</div>
+          <div class='diasDaSemanaCelular estilo1'>DOM</div>
+        </div>
+
+        <div id="tabela">
+          <!--Coluna 1-->
+          <div class='coluna periodos largura100'>
+            <div class="cabecalhoTab largura100 estilo1" style="height:7.3%; background-color: white;"></div>
+            <div class="diasSemana estilo1">Manhã</div>
+            <div class="diasSemana estilo1">Tarde</div>
+            <div id = "noite" class="diasSemana estilo1">Noite</div>
+          </div>
+
+
+          <!--Coluna 2-->
+          <div class='coluna segunda largura100'>
+            <div class="cabecalhoTab largura100 estilo1">SEG</div>
+            <div class="input largura100"><textarea class="textarea2" style="background-color: #efefef" id="7" class="noselect" readonly="readonly" unselectable="on">9h-10h - preparar aulas semanais</textarea></div>
+            <div class="input largura100"><textarea style="background-color: #efefef" class="noselect" readonly="readonly" unselectable="on">15h-17h - aula particular</textarea></div>
+            <div class="input largura100"><textarea style="background-color: #efefef" class='fundo noselect' readonly="readonly" unselectable="on">19h30-22h - estudar</textarea></div>
+          </div>
+
+          <!--Coluna 3-->
+          <div class='coluna terca largura100'>
+            <div class="cabecalhoTab largura100 estilo1">TER</div>
+            <div class="input largura100"><textarea style="background-color: #efefef" class="noselect" readonly="readonly" unselectable="on">9h-10h - caminhada</textarea></div>
+            <div class="input largura100"><textarea class="noselect" readonly="readonly" unselectable="on"></textarea></div>
+            <div class="input largura100"><textarea style="background-color: #efefef" class='fundo noselect' readonly="readonly" unselectable="on">19h30-22h - estudar</textarea></div>
+          </div>
+
+          <!--Coluna 4-->
+          <div class='coluna quarta largura100'>
+            <div class="cabecalhoTab largura100 estilo1">QUA</div>
+            <div class="input largura100"><textarea class="noselect" readonly="readonly" unselectable="on"></textarea></div>
+            <div class="input largura100"><textarea style="background-color: #efefef" class="noselect" readonly="readonly" unselectable="on">15h-17h - aula particular</textarea></div>
+            <div class="input largura100"><textarea style="background-color: #efefef" class='fundo noselect' readonly="readonly" unselectable="on">19h30-22h - estudar</textarea></div>
+          </div>
+
+          <!--Coluna 5-->
+          <div class='coluna quinta largura100'>
+            <div class="cabecalhoTab largura100 estilo1">QUI</div>
+            <div class="input largura100"><textarea style="background-color: #efefef" class="noselect" readonly="readonly" unselectable="on">9h-10h - caminhada</textarea></div>
+            <div class="input largura100"><textarea class="noselect" readonly="readonly" unselectable="on"></textarea></div>
+            <div class="input largura100"><textarea style="background-color: #efefef" class='fundo noselect' readonly="readonly" unselectable="on">19h30-22h - estudar</textarea></div>
+          </div>
+
+          <!--Coluna 6-->
+          <div class='coluna sexta largura100' id="5">
+            <div class="cabecalhoTab largura100 estilo1">SEX</div>
+            <div class="input largura100"><textarea class="noselect" readonly="readonly" unselectable="on"></textarea></div>
+            <div class="input largura100"><textarea class="noselect" readonly="readonly" unselectable="on"></textarea></div>
+            <div class="input largura100"><textarea style="background-color: #efefef" class="noselect" readonly="readonly" unselectable="on">19h-21h - aula particular</textarea></div>
+          </div>
+
+          <!--Coluna 7-->
+          <div class='coluna sabado largura100' id='6'>
+            <div class="cabecalhoTab largura100 estilo1">SÁB</div>
+            <div class="input largura100"><textarea class="noselect" readonly="readonly" unselectable="on"></textarea></div>
+            <div class="input largura100"><textarea class="noselect" readonly="readonly" unselectable="on"></textarea></div>
+            <div class="input largura100"><textarea style="background-color: #efefef" class="noselect" readonly="readonly" unselectable="on">20h-23h - jantar fora com o marido</textarea></div>
+          </div>
+
+          <!--Coluna 8-->
+          <div class='coluna domingo largura100' id="7">
+            <div class="cabecalhoTab largura100 estilo1">DOM</div>
+            <div class="input largura100"><textarea style="background-color: #efefef" class="noselect" readonly="readonly" unselectable="on">9h-11h - igreja</textarea></div>
+            <div class="input largura100"><textarea class="noselect" readonly="readonly" unselectable="on"></textarea></div>
+            <div class="input largura100"><textarea class="noselect" readonly="readonly" unselectable="on"></textarea></div>
+          </div>
+        </div>
+        <!--Fim da tabela-->
+
+
+        <!--Botões-->
+        <div id = "divBotoes">
+
+          <div id = "imprimaPreenchido" class = "botoesFimNovo">
+            <div class = "tamanhoIcone">
+              <img src="assets/botao-11.png" alt="">
+            </div>
+            <p>IMPRIMIR PREENCHIDO</p>
+          </div>
+
+
+          <div id = "imprimaEmBranco" class = "botoesFimNovo">
+            <div class = "tamanhoIcone">
+              <img src="assets/botao-10.png" alt="">
+            </div>
+            <p>IMPRIMIR EM BRANCO</p>
+          </div>
+
+
+          <div id = "limparQuadro" class = "botoesFimNovo">
+            <div class = "tamanhoIcone">
+              <img src="assets/botao-12.png" alt="">
+            </div>
+            <p>LIMPAR O QUADRO</p>
+          </div>
+
+          <div id = "VerExemplo" class = "botoesFimNovo">
+            <div class = "tamanhoIcone">
+             
+            </div>
+            <p>VER EXEMPLO</p>
+          </div>
+
+
+          <div id = "voltar" class = "botoesFimNovo">
+            <div class = "tamanhoIcone">
+              <img src="assets/botao-15.png" alt="">
+            </div>
+            <p>VOLTAR</p>
+          </div>          
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div class="cred-rea">
+
+        <!-- Comente em caso de adaptação do REA -->
+        <p>
+          <span>Recurso Educacional Aberto (REA) desenvolvido pela <a href="https://univesp.br/" target="blank">Univesp</a>, disponível sob licença <a href="http://apps.univesp.br/common/license_MIT_2019.txt" target="_blank">MIT</a>.
+            Você pode utilizá-lo, compartilhá-lo e modificá-lo.</span>
+          <span><button class="btn btn-link" data-toggle="modal" data-target="#creditos">Créditos</button></span>
+          <!-- <span><a href="#" target="_blank" aria-label="GitHub">GitHub <i class="fab fa-github"></i></a></span>. -->
+          <!-- <p> -->
+          <!-- Descomente em caso de adaptação do REA -->
+          <!-- <p>
+          <span>Recurso Educacional Aberto (REA) adaptado por SEU NOME.</span>
+          <span><a href="#">Versão original da Univesp</a></span>
+        </p> -->
+      </div>
+
+      <div class="aval-rea d-flex">
+       <!-- Atualizar "Nome+do+Recurso" -->
+       <a class="btn btn-secondary" href="https://forms.office.com/r/gxGTtZRQxy" target="_blank">Avaliar este recurso</a>
+
+       <!-- Atualizar "Nome+do+Recurso" -->
+       <a class="btn btn-secondary" href="https://forms.office.com/r/BU3heRJ9ZP" target="_blank">Reportar erro</a>
+     </div>
+
+
+    </div>
+  </footer>
+  <!-- Fim do rodapé -->
+
+  <!-- Fim da div .esconder-tela-pequena
+  Utilizar essa div caso o REA não se adapte a todos os formatos de tela -->
+  <!-- </div> -->
+
+  <!-- AVISO =+960px -->
+  <!-- Utilizar caso o REA possua limitações quanto aos tamanhos de tela
+  Caso contrário, deletar -->
+  <!-- <div class= "container d-lg-none text-center">
+    <div class="container">
+      <a href="https://univesp.br/" target="_blank">
+        <img src="https://apps.univesp.br/common/logo-univesp-positivo.svg" alt="Logo da Univesp" height="47px" width="135px" class='img-responsive center-block' style="margin-top:4rem">
+      </a>
+    </div>
+    <img src='https://apps.univesp.br/common/aviso-tela.gif' alt="Computador Animado" height="117px" width="160px" class='img-responsive center-block' style="margin-top:3rem">
+    <div style="margin-top:.5rem">
+      <p>
+        <font style=font-family:"Barlow" color="#3b78d1" 'text-center' size="10rem"><b>OPS!</b></font>
+      </p>
+      <p>
+        <font style=font-family:"Verdana" "text-center" size="3rem">Visualize este recurso em um computador, em janela com largura mínima de 992px.</font>
+      </p>
+    </div>
+  </div> -->
+
+  <!-- Créditos -->
+  <div class="modal fade" id="creditos" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+
+          <h6>Governo do Estado de São Paulo</h6>
+          <p>Secretaria de Desenvolvimento Econômico</p>
+
+          <h6>UNIVERSIDADE VIRTUAL DO ESTADO DE SÃO PAULO – UNIVESP</h6>
+          <p><span class="funcao">Presidente</span>Rodolfo Jardim de Azevedo</p>
+          <p><span class="funcao">Diretora Acadêmica</span>Simone Telles Martins Ramos</p>
+
+          <h6>Equipe</h6>
+          <!-- <p><span class="funcao">Docente responsável</span>Fulano de Tal</p> -->
+          <p><span class="funcao">Coordenação</span>Édison Trombeta</p>
+          <p><span class="funcao">Roteirização e Design Instrucional</span>Cida Azevedo, Édison Trombeta, Juliana Giordano, Nádia Pirillo e Yasmin Kapustin</p>
+          <p><span class="funcao">Ilustração</span>Celso Lourenço</p>
+          <p><span class="funcao">Layout</span>Bruna Garabito, Graciela Tocchetto e Natasha Higa</p>
+          <p><span class="funcao">Programação</span>Alberto Ortiz e Bruna Garabito</p>
+
+        </div>
+        <div class="modal-footer">
+          <p>Julho/2019</p>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Arquivos Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <script src="https://apps.univesp.br/common/jquery-ui-touch-punch.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+
+  <!-- jsSocials -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
+  <script>
+    var share = $("#share-buttons");
+    var page_title = $(document).attr('title');
+    var page_url = window.location.href;
+    share.jsSocials({
+      shares: [{
+          share: "facebook",
+          label: "Facebook",
+          logo: "fab fa-facebook-f",
+        },
+        {
+          share: "twitter",
+          label: "Twitter",
+          logo: "fab fa-twitter",
+        },
+        {
+          share: "whatsapp",
+          label: "Whatsapp",
+          logo: "fab fa-whatsapp",
+        },
+      ],
+      url: page_url,
+      text: 'Confira o REA ' + page_title + '.',
+      showLabel: true,
+      showCount: false,
+      shareIn: "popup",
+    });
+  </script>
+
+
+  <!-- Custom JS -->
+  <script type="text/javascript" src="javascripts/events.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+
+
+  <!-- MathJax. Descomente se for utilizar. Caso contrário, remova. -->
+  <!-- <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+
+  <!-- Analytics. Remova em caso de reutilização do REA -->
+  <script src="https://apps.univesp.br/common/analytics.js"></script>
+
+</body>
+
+</html>
